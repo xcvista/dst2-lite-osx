@@ -26,4 +26,4 @@ Distribution:
 * Deefun Subtitle Team <http://www.deefun.com>
 
 Testing:
-*(product testing not started yet)
+* (product testing not started yet)
