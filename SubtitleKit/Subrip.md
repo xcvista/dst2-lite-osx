@@ -24,11 +24,11 @@ For info about GDL, check <https://github.com/xcvista/GraphKit>
 
 Language as in scanf-like designation:
 
-  srt = line | srt line;
-  line = %u \n timetag [location] \n %s \n\n;
-  timetag = time --> time;
-  time = %u:%02u:%02u.%03u;
-  location = X1:%u X2:%u Y1:%u Y2:%u;
+* srt = line | srt line;
+* line = %u \n timetag [location] \n %s \n\n;
+* timetag = time --> time;
+* time = %u:%02u:%02u.%03u;
+* location = X1:%u X2:%u Y1:%u Y2:%u;
 
 Parser:
 
