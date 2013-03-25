@@ -8,6 +8,10 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface SKLine : NSObject
+@class SKTrack;
+
+@interface SKLine : NSObject <NSCopying>
+
+@property (weak) SKTrack *track;
 
 @end

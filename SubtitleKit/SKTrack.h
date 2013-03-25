@@ -8,10 +8,22 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface SKTrack : NSObject
+@class SKSubtitleFile, SKLine;
+
+@interface SKTrack : NSObject <NSCopying>
 
 @property NSLocale *locale;
+@property (weak) SKSubtitleFile *subtitleFile;
 
 - (id)initWithLocale:(NSLocale *)locale;
+- (instancetype)deepCopy;
+
+- (NSArray *)allLines;
+- (SKLine *)lineAtIndex:(NSUInteger)index;
+- (id)objectAtIndexedSubscript:(NSUInteger)index;
+- (void)addLine:(SKLine *)line;
+- (void)setLine:(SKLine *)line atIndex:(NSUInteger)index;
+- (void)setObject:(id)object atIndexedSubscript:(NSUInteger)index;
+- (void)sortLines;
 
 @end

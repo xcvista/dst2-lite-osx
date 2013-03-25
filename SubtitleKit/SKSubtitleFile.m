@@ -11,8 +11,8 @@
 
 @interface SKSubtitleFile ()
 
-@property NSMutableArray *_tracks;
-@property NSMutableDictionary *_metadata;
+@property NSMutableArray *tracks;
+@property NSMutableDictionary *metadata;
 
 @end
 
@@ -22,39 +22,37 @@
 {
     if (self = [super init])
     {
-        self._tracks = [NSMutableArray array];
-        self._metadata = [NSMutableDictionary dictionary];
+        self.tracks = [NSMutableArray array];
+        self.metadata = [NSMutableDictionary dictionary];
     }
     return self;
 }
 
-- (NSDictionary *)metadata
+- (NSDictionary *)allMetadata
 {
-    return [self._metadata copy];
+    return [self.metadata copy];
 }
 
 - (id)valueForMetadataKey:(NSString *)key
 {
-    return self._metadata[key];
+    return self.metadata[key];
 }
 
 - (void)setValue:(id)value forMetadataKey:(NSString *)key
 {
     [self willChangeValueForKey:key];
-    self._metadata[key] = value;
+    self.metadata[key] = value;
     [self didChangeValueForKey:key];
 }
 
 - (void)setObject:(id)object forKeyedSubscript:(NSString *)key
 {
-    [self willChangeValueForKey:key];
-    self._metadata[key] = object;
-    [self didChangeValueForKey:key];
+    [self setValue:object forMetadataKey:key];
 }
 
-- (NSArray *)tracks
+- (NSArray *)allTracks
 {
-    return [self._tracks copy];
+    return [self.tracks copy];
 }
 
 - (SKTrack *)trackForLocale:(NSLocale *)locale
@@ -64,36 +62,56 @@
 
 - (NSArray *)tracksForLocale:(NSLocale *)locale
 {
-    NSMutableArray *tracks = [NSMutableArray arrayWithCapacity:[self._tracks count]];
-    for (SKTrack *track in self._tracks)
+    NSMutableArray *tracks = [NSMutableArray arrayWithCapacity:[self.tracks count]];
+    for (SKTrack *track in self.tracks)
     {
-        if ([track.locale isEqual:locale])
+        if (^BOOL(NSLocale *locale1, NSLocale *locale2)
+        {
+            if (!locale1 && !locale2)
+                return YES;
+            else
+                return [locale isEqual:locale2];
+        }
+            (track.locale, locale)) // Lambda in if. :)
             [tracks addObject:track];
     }
     return tracks;
 }
 
+- (SKTrack *)trackAtIndex:(NSUInteger)index
+{
+    return self.tracks[index];
+}
+
 - (id)objectAtIndexedSubscript:(NSUInteger)index
 {
-    return self._tracks[index];
+    return [self trackAtIndex:index];
 }
 
 - (void)addTrack:(SKTrack *)track
 {
-    [self._tracks addObject:track];
+    [self willChangeValueForKey:@"track"];
+    SKTrack *newTrack = (track.subtitleFile) ? [track deepCopy] : track;
+    newTrack.subtitleFile = self;
+    [self.tracks addObject:newTrack];
+    [self didChangeValueForKey:@"track"];
 }
 
 - (void)removeTrackAtIndex:(NSUInteger)index
 {
-    [self._tracks removeObjectAtIndex:index];
+    [self willChangeValueForKey:@"track"];
+    [self.tracks removeObjectAtIndex:index];
+    [self didChangeValueForKey:@"track"];
 }
 
 - (void)removeTracksAtIndexes:(NSIndexSet *)indexSet
 {
+    [self willChangeValueForKey:@"track"];
     [indexSet enumerateIndexesUsingBlock:^(NSUInteger index, BOOL *stop)
     {
-        [self._tracks removeObjectAtIndex:index];
+        [self.tracks removeObjectAtIndex:index];
     }];
+    [self didChangeValueForKey:@"track"];
 }
 
 - (id)objectForKeyedSubscript:(id)key

@@ -12,12 +12,13 @@
 
 @interface SKSubtitleFile : NSObject
 
-- (NSDictionary *)metadata;
+- (NSDictionary *)allMetadata;
 - (id)valueForMetadataKey:(NSString *)key;
 - (void)setValue:(id)value forMetadataKey:(NSString *)key;
 - (void)setObject:(id)object forKeyedSubscript:(NSString *)key;
 
-- (NSArray *)tracks;
+- (NSArray *)allTracks;
+- (SKTrack *)trackAtIndex:(NSUInteger)index;
 - (SKTrack *)trackForLocale:(NSLocale *)locale;
 - (NSArray *)tracksForLocale:(NSLocale *)locale;
 - (id)objectAtIndexedSubscript:(NSUInteger)index;
