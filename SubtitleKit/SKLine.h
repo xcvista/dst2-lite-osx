@@ -13,5 +13,21 @@
 @interface SKLine : NSObject <NSCopying>
 
 @property (weak) SKTrack *track;
+@property id content;
+@property NSTimeInterval startTime;
+@property NSTimeInterval duration;
+
+- (id)initWithContent:(id)content
+            startTime:(NSTimeInterval)startTime
+              endTime:(NSTimeInterval)endTime;
+
+- (id)initWithContent:(id)content
+            startTime:(NSTimeInterval)startTime
+             duration:(NSTimeInterval)duration;
+
+- (NSTimeInterval)endTime;
+- (void)setEndTime:(NSTimeInterval)endTime;
+
+- (NSComparisonResult)compare:(SKLine *)other;
 
 @end
