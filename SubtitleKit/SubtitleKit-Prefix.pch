@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'SubtitleKit' target in the 'SubtitleKit' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif
