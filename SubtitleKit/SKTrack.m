@@ -60,6 +60,22 @@
     return self.lines[index];
 }
 
+- (SKLine *)lineAtTime:(NSTimeInterval)time
+{
+    return [self linesAtTime:time][0];
+}
+
+- (NSArray *)linesAtTime:(NSTimeInterval)time
+{
+    NSMutableArray *lines = [NSMutableArray array];
+    for (SKLine *line in self.lines)
+    {
+        if (time > line.startTime && time - line.startTime < line.duration)
+            [lines addObject:line];
+    }
+    return lines;
+}
+
 - (id)objectAtIndexedSubscript:(NSUInteger)index
 {
     return self.lines[index];

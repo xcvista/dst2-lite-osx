@@ -20,6 +20,8 @@
 
 - (NSArray *)allLines;
 - (SKLine *)lineAtIndex:(NSUInteger)index;
+- (SKLine *)lineAtTime:(NSTimeInterval)time;
+- (NSArray *)linesAtTime:(NSTimeInterval)time;
 - (id)objectAtIndexedSubscript:(NSUInteger)index;
 - (void)addLine:(SKLine *)line;
 - (void)setLine:(SKLine *)line atIndex:(NSUInteger)index;

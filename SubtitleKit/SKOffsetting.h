@@ -8,7 +8,7 @@
 
 #import <SubtitleKit/SKSubtitleFile.h>
 
-extern NSString *const SKOffsettingMetadataKey;
+extern NSString *const SKOffsetMetadataKey;
 
 @interface SKSubtitleFile (SKOffsetting)
 

@@ -7,9 +7,35 @@
 //
 
 #import "SKOffsetting.h"
-#import <SubtitleKit/SKTrack.h>
-#import <SubtitleKit/SKLine.h>
+#import "SKTrack.h"
+#import "SKLine.h"
 
-NSString *const SKOffsettingMetadataKey = @"offset";
+NSString *const SKOffsetMetadataKey = @"offset";
 
+@interface SKTrack (SKOffsetting)
 
+- (void)applyOffset:(NSTimeInterval)offset;
+
+@end
+
+@implementation SKSubtitleFile (SKOffsetting)
+
+- (void)applyOffset
+{
+    for (SKTrack *track in [self allTracks])
+    {
+        [track applyOffset:[self offset]];
+    }
+}
+
+- (void)setOffset:(NSTimeInterval)offset
+{
+    self[SKOffsetMetadataKey] = @(offset);
+}
+
+- (NSTimeInterval)offset
+{
+    return [self[SKOffsetMetadataKey] doubleValue];
+}
+
+@end
