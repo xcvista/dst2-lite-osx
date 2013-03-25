@@ -18,6 +18,8 @@
 		1DD5737B16FFD5DA002D6A1D /* SKLine.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DD5737916FFD5DA002D6A1D /* SKLine.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1DD5737C16FFD5DA002D6A1D /* SKLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DD5737A16FFD5DA002D6A1D /* SKLine.m */; };
 		1DD5737D16FFDE1F002D6A1D /* SubtitleKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DD5736716FFD0C2002D6A1D /* SubtitleKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1DD5738016FFF3A7002D6A1D /* SKSubripFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DD5737E16FFF3A6002D6A1D /* SKSubripFormat.h */; };
+		1DD5738116FFF3A7002D6A1D /* SKSubripFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DD5737F16FFF3A7002D6A1D /* SKSubripFormat.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,9 @@
 		1DD5737616FFD5CB002D6A1D /* SKOffsetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKOffsetting.m; sourceTree = "<group>"; };
 		1DD5737916FFD5DA002D6A1D /* SKLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKLine.h; sourceTree = "<group>"; };
 		1DD5737A16FFD5DA002D6A1D /* SKLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKLine.m; sourceTree = "<group>"; };
+		1DD5737E16FFF3A6002D6A1D /* SKSubripFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSubripFormat.h; sourceTree = "<group>"; };
+		1DD5737F16FFF3A7002D6A1D /* SKSubripFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSubripFormat.m; sourceTree = "<group>"; };
+		1DD573821700074E002D6A1D /* Subrip.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = Subrip.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +109,9 @@
 				1DD5737A16FFD5DA002D6A1D /* SKLine.m */,
 				1DD5737516FFD5CB002D6A1D /* SKOffsetting.h */,
 				1DD5737616FFD5CB002D6A1D /* SKOffsetting.m */,
+				1DD5737E16FFF3A6002D6A1D /* SKSubripFormat.h */,
+				1DD5737F16FFF3A7002D6A1D /* SKSubripFormat.m */,
+				1DD573821700074E002D6A1D /* Subrip.md */,
 				1DD5736116FFD0C2002D6A1D /* Supporting Files */,
 			);
 			path = SubtitleKit;
@@ -131,6 +139,7 @@
 				1DD5737716FFD5CB002D6A1D /* SKOffsetting.h in Headers */,
 				1DD5737B16FFD5DA002D6A1D /* SKLine.h in Headers */,
 				1DD5737D16FFDE1F002D6A1D /* SubtitleKit.h in Headers */,
+				1DD5738016FFF3A7002D6A1D /* SKSubripFormat.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +211,7 @@
 				1DD5737416FFD4D3002D6A1D /* SKTrack.m in Sources */,
 				1DD5737816FFD5CB002D6A1D /* SKOffsetting.m in Sources */,
 				1DD5737C16FFD5DA002D6A1D /* SKLine.m in Sources */,
+				1DD5738116FFF3A7002D6A1D /* SKSubripFormat.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
