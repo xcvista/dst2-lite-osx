@@ -57,7 +57,7 @@ extern NSString *const SKBorderRectStyleKey;        // border-rect (Not saved)
 extern NSString *const SKBorderOriginStyleKey;      // > border-origin
 extern NSString *const SKBorderSizeStyleKey;        // > border-size
 extern NSString *const SKBorderStyleKey;            // border-style
-extern NSString *const SKBorderShapeKey;            // border-shape
+extern NSString *const SKBorderShapeStyleKey;       // border-shape
 extern NSString *const SKBackgroundColorStyleKey;   // background-color
 extern NSString *const SKBackgroundOpacityStyleKey; // background-opacity
 extern NSString *const SKMarginStyleKey;            // margin (Used to determine rounded corners' radius)
@@ -171,7 +171,7 @@ extern NSString *const SKHeightStyleKey;    // > height
 
 @end
 
-@interface SKLine (SKImageLine)
+@interface SKLine (SKImageContentObject)
 
 - (NSImage *)imageValue;
 - (void)setImageValue:(NSImage *)imageValue;

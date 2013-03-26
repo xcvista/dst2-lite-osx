@@ -123,10 +123,236 @@ NSString *const SKBorderRectStyleKey        = @"border-rect";
 NSString *const SKBorderOriginStyleKey      = @"border-origin";
 NSString *const SKBorderSizeStyleKey        = @"border-size";
 NSString *const SKBorderStyleKey            = @"border-style";
-NSString *const SKBorderShapeKey            = @"border-shape";
+NSString *const SKBorderShapeStyleKey       = @"border-shape";
 NSString *const SKBackgroundColorStyleKey   = @"background-color";
 NSString *const SKBackgroundOpacityStyleKey = @"background-opacity";
 NSString *const SKMarginStyleKey            = @"margin";
 NSString *const SKVerticalAlignStyleKey     = @"vertical-align";
 
+@implementation SKLine (SKStyle)
 
+- (NSFont *)font
+{
+    return self[SKFontStyleKey];
+}
+
+- (void)setFont:(NSFont *)font
+{
+    self[SKFontStyleKey] = font;
+}
+
+- (NSColor *)color
+{
+    return self[SKColorStyleKey];
+}
+
+- (void)setColor:(NSColor *)color
+{
+    self[SKColorStyleKey] = color;
+}
+
+- (SKFontStyle)fontStyle
+{
+    return [self[SKFontStyleStyleKey] unsignedIntegerValue];
+}
+
+- (void)setFontStyle:(SKFontStyle)fontStyle
+{
+    self[SKFontStyleStyleKey] = @(fontStyle);
+}
+
+- (SKTextDecoration)textDecoration
+{
+    return [self[SKTextDecorationStyleKey] unsignedIntegerValue];
+}
+
+- (void)setTextDecoration:(SKTextDecoration)textDecoration
+{
+    self[SKTextDecorationStyleKey] = @(textDecoration);
+}
+
+- (NSTextAlignment)textAlignment
+{
+    return [self[SKTextAlignmentStyleKey] unsignedIntegerValue];
+}
+
+- (void)setTextAlignment:(NSTextAlignment)textAlignment
+{
+    self[SKTextAlignmentStyleKey] = @(textAlignment);
+}
+
+- (NSColor *)strokeColor
+{
+    return self[SKStrokeColorStyleKey];
+}
+
+- (void)setStrokeColor:(NSColor *)color
+{
+    self[SKStrokeColorStyleKey] = color;
+}
+
+- (CGFloat)strokeWidth
+{
+    return [self[SKStrokeWidthStyleKey] doubleValue];
+}
+
+- (void)setStrokeWidth:(CGFloat)borderWidth
+{
+    self[SKStrokeWidthStyleKey] = @(borderWidth);
+}
+
+- (SKBorderStyle)strokeStyle
+{
+    return [self[SKStrokeStyleKey] unsignedIntegerValue];
+}
+
+- (void)setStrokeStyle:(SKBorderStyle)strokeStyle
+{
+    self[SKStrokeStyleKey] = @(strokeStyle);
+}
+
+- (NSRect)borderRect
+{
+    NSValue *rectValue = self[SKBorderRectStyleKey];
+    if (rectValue)
+        return [rectValue rectValue];
+    else
+        return NSMakeRect(-1, -1, -1, -1);
+}
+
+- (void)setBorderRect:(NSRect)borderRect
+{
+    self[SKBorderRectStyleKey] = [NSValue valueWithRect:borderRect];
+}
+
+- (SKBorderShape)borderShape
+{
+    return [self[SKBorderShapeStyleKey] unsignedIntegerValue];
+}
+
+- (void)setBorderShape:(SKBorderShape)borderShape
+{
+    self[SKBorderShapeStyleKey] = @(borderShape);
+}
+
+- (SKBorderStyle)borderStyle
+{
+    return [self[SKBorderStyleKey] unsignedIntegerValue];
+}
+
+- (void)setBorderStyle:(SKBorderStyle)borderStyle
+{
+    self[SKBorderStyleKey] = @(borderStyle);
+}
+
+- (NSColor *)backgroundColor
+{
+    return self[SKBackgroundColorStyleKey];
+}
+
+- (void)setBackgroundColor:(NSColor *)color
+{
+    self[SKBackgroundColorStyleKey] = color;
+}
+
+- (CGFloat)margin
+{
+    return [self[SKMarginStyleKey] doubleValue];
+}
+
+- (void)setMargin:(CGFloat)margin
+{
+    self[SKMarginStyleKey] = @(margin);
+}
+
+@end
+
+@implementation SKLine (SKStringContentObject)
+
+- (NSString *)stringValue
+{
+    if ([self.content isKindOfClass:[NSAttributedString class]])
+    {
+        NSAttributedString *content = self.content;
+        return [content string];
+    }
+    else if ([self.content isKindOfClass:[NSString class]])
+    {
+        return [self.content copy];
+    }
+    else
+        return nil;
+}
+
+- (void)setStringValue:(NSString *)stringValue
+{
+    if ([stringValue isKindOfClass:[NSAttributedString class]])
+    {
+        NSAttributedString *attributedString = (NSAttributedString *)stringValue;
+        self.content = [attributedString string];
+    }
+    else if ([stringValue isKindOfClass:[NSString class]])
+    {
+        self.content = [stringValue copy];
+    }
+}
+
+- (NSAttributedString *)attributedStringValue
+{
+    if ([self.content isKindOfClass:[NSAttributedString class]])
+    {
+        return [self.content copy];
+    }
+    else if ([self.content isKindOfClass:[NSString class]])
+    {
+        return [[NSAttributedString alloc] initWithString:self.content];
+    }
+    else
+        return nil;
+}
+
+- (void)setAttributedStringValue:(NSAttributedString *)attributedString
+{
+    self.content = attributedString;
+}
+
+@end
+
+NSString *const SKSizeRectStyleKey = @"rect-size";
+NSString *const SKWidthStyleKey = @"width";
+NSString *const SKHeightStyleKey = @"height";
+
+@implementation SKLine (SKImageStyle)
+
+- (NSSize)rectSize
+{
+    NSValue *rectSize = self[SKSizeRectStyleKey];
+    if (rectSize)
+        return [rectSize sizeValue];
+    else
+        return NSMakeSize(-1, -1);
+}
+
+- (void)setRectSize:(NSSize)rectSize
+{
+    self[SKSizeRectStyleKey] = [NSValue valueWithSize:rectSize];
+}
+
+@end
+
+@implementation SKLine (SKImageContentObject)
+
+- (NSImage *)imageValue
+{
+    if ([self.content isKindOfClass:[NSImage class]])
+        return self.content;
+    else
+        return nil;
+}
+
+- (void)setImageValue:(NSImage *)imageValue
+{
+    self.content = imageValue;
+}
+
+@end
