@@ -7,7 +7,6 @@
 //
 
 #import "SKTrack.h"
-#import "SKLine.h"
 
 @interface SKTrack ()
 

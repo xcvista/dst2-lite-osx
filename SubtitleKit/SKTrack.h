@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <SubtitleKit/SKLine.h>
 
 @class SKSubtitleFile, SKLine;
 
@@ -14,6 +15,7 @@
 
 @property NSLocale *locale;
 @property (weak) SKSubtitleFile *subtitleFile;
+@property NSMutableDictionary *style;
 
 - (id)initWithLocale:(NSLocale *)locale;
 - (instancetype)deepCopy;
@@ -27,5 +29,48 @@
 - (void)setLine:(SKLine *)line atIndex:(NSUInteger)index;
 - (void)setObject:(id)object atIndexedSubscript:(NSUInteger)index;
 - (void)sortLines;
+
+@end
+
+@interface SKTrack (SKStyle)
+
+- (NSFont *)font;
+- (void)setFont:(NSFont *)font;
+
+- (NSColor *)color;
+- (void)setColor:(NSColor *)color;
+
+- (SKFontStyle)fontStyle;
+- (void)setFontStyle:(SKFontStyle)fontStyle;
+
+- (SKTextDecoration)textDecoration;
+- (void)setTextDecoration:(SKTextDecoration)textDecoration;
+
+- (NSTextAlignment)textAlignment;
+- (void)setTextAlignment:(NSTextAlignment)textAlignment;
+
+- (NSColor *)strokeColor;
+- (void)setStrokeColor:(NSColor *)color;
+
+- (CGFloat)strokeWidth;
+- (void)setStrokeWidth:(CGFloat)borderWidth;
+
+- (SKBorderStyle)strokeStyle;
+- (void)setStrokeStyle:(SKBorderStyle)strokeStyle;
+
+- (NSRect)borderRect;
+- (void)setBorderRect:(NSRect)borderRect;
+
+- (SKBorderStyle)borderStyle;
+- (void)setBorderStyle:(SKBorderStyle)borderStyle;
+
+- (SKBorderShape)borderShape;
+- (void)setBorderShape:(SKBorderShape)borderShape;
+
+- (NSColor *)backgroundColor;
+- (void)setBackgroundColor:(NSColor *)color;
+
+- (CGFloat)margin;
+- (void)setMargin:(CGFloat)margin;
 
 @end

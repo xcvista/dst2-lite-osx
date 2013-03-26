@@ -18,7 +18,7 @@
 		1DD5737B16FFD5DA002D6A1D /* SKLine.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DD5737916FFD5DA002D6A1D /* SKLine.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1DD5737C16FFD5DA002D6A1D /* SKLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DD5737A16FFD5DA002D6A1D /* SKLine.m */; };
 		1DD5737D16FFDE1F002D6A1D /* SubtitleKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DD5736716FFD0C2002D6A1D /* SubtitleKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1DD5738016FFF3A7002D6A1D /* SKSubripFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DD5737E16FFF3A6002D6A1D /* SKSubripFormat.h */; };
+		1DD5738016FFF3A7002D6A1D /* SKSubripFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DD5737E16FFF3A6002D6A1D /* SKSubripFormat.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1DD5738116FFF3A7002D6A1D /* SKSubripFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DD5737F16FFF3A7002D6A1D /* SKSubripFormat.m */; };
 /* End PBXBuildFile section */
 
@@ -337,6 +337,7 @@
 				1DD5736B16FFD0C2002D6A1D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

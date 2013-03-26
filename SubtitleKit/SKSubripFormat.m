@@ -10,11 +10,19 @@
 
 @implementation SKSubripFormat
 
++ (BOOL)lexicalAnalyseTimetag:(NSString *)line
+                    startTime:(NSTimeInterval *)start
+                      endTime:(NSTimeInterval *)end
+                         rect:(NSRect *)rect
+{
+    
+}
+
 + (SKSubtitleFile *)subtitleFileFromString:(NSString *)fileContent
                                     locale:(NSLocale *)locale
 {
     NSMutableString *content = [fileContent mutableCopy]; // Char stream
-    NSUInteger state = 0; //0 = 
+    NSUInteger state = 0; // Refer to Subrip.md for info.
     
     while ([content length])
     {
@@ -22,6 +30,18 @@
         NSString *line = [[content substringToIndex:firstReturn.location] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         [content deleteCharactersInRange:NSMakeRange(0, NSMaxRange(firstReturn))];
         
+        NSMutableDictionary *stateInfo = [NSMutableDictionary dictionary]; // Not gonna use those pesky ivars.
+        
+        switch (state)
+        {
+            case 0:
+            {
+                // State 0: Hunt for the starting line number. What number is not important (to open partial files)
+                // But the number must be solo on its line. And, there will be a look-back later.
+                
+                
+            }
+        }
     }
 }
 

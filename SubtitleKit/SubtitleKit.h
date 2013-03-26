@@ -12,3 +12,4 @@
 #import <SubtitleKit/SKTrack.h>
 #import <SubtitleKit/SKLine.h>
 #import <SubtitleKit/SKOffsetting.h>
+#import <SubtitleKit/SKSubripFormat.h>
