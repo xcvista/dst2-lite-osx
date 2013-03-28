@@ -20,6 +20,14 @@
 		1DD5737D16FFDE1F002D6A1D /* SubtitleKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DD5736716FFD0C2002D6A1D /* SubtitleKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1DD5738016FFF3A7002D6A1D /* SKSubripFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DD5737E16FFF3A6002D6A1D /* SKSubripFormat.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1DD5738116FFF3A7002D6A1D /* SKSubripFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DD5737F16FFF3A7002D6A1D /* SKSubripFormat.m */; };
+		1DE2F46B1703C176000D31B7 /* SKStringReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DE2F4691703C176000D31B7 /* SKStringReader.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		1DE2F46C1703C176000D31B7 /* SKStringReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE2F46A1703C176000D31B7 /* SKStringReader.m */; };
+		1DE2F4741703C6C5000D31B7 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DE2F4731703C6C5000D31B7 /* SenTestingKit.framework */; };
+		1DE2F4751703C6C5000D31B7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD5735A16FFD0C2002D6A1D /* Cocoa.framework */; };
+		1DE2F47B1703C6C5000D31B7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1DE2F4791703C6C5000D31B7 /* InfoPlist.strings */; };
+		1DE2F4851703C884000D31B7 /* SKNumeralTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE2F4841703C884000D31B7 /* SKNumeralTest.m */; };
+		1DE2F4881703CBD1000D31B7 /* SKStringStreamTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE2F4871703CBD1000D31B7 /* SKStringStreamTest.m */; };
+		1DE2F4891703CBE4000D31B7 /* SubtitleKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD5735716FFD0C2002D6A1D /* SubtitleKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +53,17 @@
 		1DD5737E16FFF3A6002D6A1D /* SKSubripFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSubripFormat.h; sourceTree = "<group>"; };
 		1DD5737F16FFF3A7002D6A1D /* SKSubripFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSubripFormat.m; sourceTree = "<group>"; };
 		1DD573821700074E002D6A1D /* Subrip.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = Subrip.md; sourceTree = "<group>"; };
+		1DE2F4691703C176000D31B7 /* SKStringReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKStringReader.h; sourceTree = "<group>"; };
+		1DE2F46A1703C176000D31B7 /* SKStringReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKStringReader.m; sourceTree = "<group>"; };
+		1DE2F4721703C6C5000D31B7 /* SKTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SKTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DE2F4731703C6C5000D31B7 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		1DE2F4781703C6C5000D31B7 /* SKTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SKTests-Info.plist"; sourceTree = "<group>"; };
+		1DE2F47A1703C6C5000D31B7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1DE2F47F1703C6C5000D31B7 /* SKTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SKTests-Prefix.pch"; sourceTree = "<group>"; };
+		1DE2F4831703C884000D31B7 /* SKNumeralTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKNumeralTest.h; sourceTree = "<group>"; };
+		1DE2F4841703C884000D31B7 /* SKNumeralTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKNumeralTest.m; sourceTree = "<group>"; };
+		1DE2F4861703CBD1000D31B7 /* SKStringStreamTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKStringStreamTest.h; sourceTree = "<group>"; };
+		1DE2F4871703CBD1000D31B7 /* SKStringStreamTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKStringStreamTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +72,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DD5735B16FFD0C2002D6A1D /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1DE2F46E1703C6C5000D31B7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1DE2F4891703CBE4000D31B7 /* SubtitleKit.framework in Frameworks */,
+				1DE2F4741703C6C5000D31B7 /* SenTestingKit.framework in Frameworks */,
+				1DE2F4751703C6C5000D31B7 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +94,7 @@
 				1D332B3C16FF81AD009E401D /* .gitignore */,
 				1D332B3D16FF81D3009E401D /* README.md */,
 				1DD5736016FFD0C2002D6A1D /* SubtitleKit */,
+				1DE2F4761703C6C5000D31B7 /* SKTests */,
 				1DD5735916FFD0C2002D6A1D /* Frameworks */,
 				1DD5735816FFD0C2002D6A1D /* Products */,
 			);
@@ -74,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				1DD5735716FFD0C2002D6A1D /* SubtitleKit.framework */,
+				1DE2F4721703C6C5000D31B7 /* SKTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -82,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				1DD5735A16FFD0C2002D6A1D /* Cocoa.framework */,
+				1DE2F4731703C6C5000D31B7 /* SenTestingKit.framework */,
 				1DD5735C16FFD0C2002D6A1D /* Other Frameworks */,
 			);
 			name = Frameworks;
@@ -111,6 +143,8 @@
 				1DD5737616FFD5CB002D6A1D /* SKOffsetting.m */,
 				1DD5737E16FFF3A6002D6A1D /* SKSubripFormat.h */,
 				1DD5737F16FFF3A7002D6A1D /* SKSubripFormat.m */,
+				1DE2F4691703C176000D31B7 /* SKStringReader.h */,
+				1DE2F46A1703C176000D31B7 /* SKStringReader.m */,
 				1DD573821700074E002D6A1D /* Subrip.md */,
 				1DD5736116FFD0C2002D6A1D /* Supporting Files */,
 			);
@@ -123,6 +157,28 @@
 				1DD5736216FFD0C2002D6A1D /* SubtitleKit-Info.plist */,
 				1DD5736316FFD0C2002D6A1D /* InfoPlist.strings */,
 				1DD5736616FFD0C2002D6A1D /* SubtitleKit-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1DE2F4761703C6C5000D31B7 /* SKTests */ = {
+			isa = PBXGroup;
+			children = (
+				1DE2F4831703C884000D31B7 /* SKNumeralTest.h */,
+				1DE2F4841703C884000D31B7 /* SKNumeralTest.m */,
+				1DE2F4861703CBD1000D31B7 /* SKStringStreamTest.h */,
+				1DE2F4871703CBD1000D31B7 /* SKStringStreamTest.m */,
+				1DE2F4771703C6C5000D31B7 /* Supporting Files */,
+			);
+			path = SKTests;
+			sourceTree = "<group>";
+		};
+		1DE2F4771703C6C5000D31B7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1DE2F4781703C6C5000D31B7 /* SKTests-Info.plist */,
+				1DE2F4791703C6C5000D31B7 /* InfoPlist.strings */,
+				1DE2F47F1703C6C5000D31B7 /* SKTests-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -140,6 +196,7 @@
 				1DD5737B16FFD5DA002D6A1D /* SKLine.h in Headers */,
 				1DD5737D16FFDE1F002D6A1D /* SubtitleKit.h in Headers */,
 				1DD5738016FFF3A7002D6A1D /* SKSubripFormat.h in Headers */,
+				1DE2F46B1703C176000D31B7 /* SKStringReader.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,6 +221,24 @@
 			productReference = 1DD5735716FFD0C2002D6A1D /* SubtitleKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		1DE2F4711703C6C5000D31B7 /* SKTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DE2F4801703C6C5000D31B7 /* Build configuration list for PBXNativeTarget "SKTests" */;
+			buildPhases = (
+				1DE2F46D1703C6C5000D31B7 /* Sources */,
+				1DE2F46E1703C6C5000D31B7 /* Frameworks */,
+				1DE2F46F1703C6C5000D31B7 /* Resources */,
+				1DE2F4701703C6C5000D31B7 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SKTests;
+			productName = SKTests;
+			productReference = 1DE2F4721703C6C5000D31B7 /* SKTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -187,6 +262,7 @@
 			projectRoot = "";
 			targets = (
 				1DD5735616FFD0C2002D6A1D /* SubtitleKit */,
+				1DE2F4711703C6C5000D31B7 /* SKTests */,
 			);
 		};
 /* End PBXProject section */
@@ -200,7 +276,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1DE2F46F1703C6C5000D31B7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1DE2F47B1703C6C5000D31B7 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1DE2F4701703C6C5000D31B7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1DD5735216FFD0C2002D6A1D /* Sources */ = {
@@ -212,6 +312,16 @@
 				1DD5737816FFD5CB002D6A1D /* SKOffsetting.m in Sources */,
 				1DD5737C16FFD5DA002D6A1D /* SKLine.m in Sources */,
 				1DD5738116FFF3A7002D6A1D /* SKSubripFormat.m in Sources */,
+				1DE2F46C1703C176000D31B7 /* SKStringReader.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1DE2F46D1703C6C5000D31B7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1DE2F4851703C884000D31B7 /* SKNumeralTest.m in Sources */,
+				1DE2F4881703CBD1000D31B7 /* SKStringStreamTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,6 +332,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				1DD5736416FFD0C2002D6A1D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1DE2F4791703C6C5000D31B7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1DE2F47A1703C6C5000D31B7 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -318,6 +436,79 @@
 			};
 			name = Release;
 		};
+		1DE2F4811703C6C5000D31B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SKTests/SKTests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "SKTests/SKTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		1DE2F4821703C6C5000D31B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SKTests/SKTests-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "SKTests/SKTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -338,6 +529,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		1DE2F4801703C6C5000D31B7 /* Build configuration list for PBXNativeTarget "SKTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DE2F4811703C6C5000D31B7 /* Debug */,
+				1DE2F4821703C6C5000D31B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

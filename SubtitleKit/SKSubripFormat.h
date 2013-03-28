@@ -8,6 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+#define SK_SRT_ADHOC    0 // Use a simpler ad-hoc parser.
+#define SK_SRT_PARSER   1 // Use a more sophisticated structed parser.
+
+#define SK_SRT_MODE     SK_SRT_ADHOC
+
 @class SKSubtitleFile;
 
 @interface SKSubripFormat : NSObject
